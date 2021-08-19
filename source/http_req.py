@@ -14,3 +14,6 @@ class HttpReq:
 
     def send_http_get_request(self):
         return requests.get(url=self.base_url+'get')
+
+    def send_http_post_request(self):
+        return requests.post(url=self.base_url+'post')

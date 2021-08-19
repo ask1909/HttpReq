@@ -23,6 +23,10 @@ class TestHttpReq(unittest.TestCase):
         self.response = self.reqObj.send_http_get_request()
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
 
+    def test_02_http_post_request(self):
+        self.response = self.reqObj.send_http_post_request()
+        self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
+
 
 if __name__ == '__main__':
     unittest.main()
