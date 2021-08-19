@@ -17,3 +17,6 @@ class HttpReq:
 
     def send_http_post_request(self):
         return requests.post(url=self.base_url+'post')
+
+    def send_http_put_request(self):
+        return requests.put(url=self.base_url+'put')
