@@ -20,3 +20,9 @@ class HttpReq:
 
     def send_http_put_request(self):
         return requests.put(url=self.base_url+'put')
+
+    def send_http_patch_request(self):
+        return requests.patch(url=self.base_url+'patch')
+
+    def send_http_delete_request(self):
+        return requests.delete(url=self.base_url+'delete')

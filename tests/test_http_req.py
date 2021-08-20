@@ -30,3 +30,11 @@ class TestHttpReq(unittest.TestCase):
     def test_03_http_put_request(self):
         self.response = self.reqObj.send_http_put_request()
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
+
+    def test_04_http_patch_request(self):
+        self.response = self.reqObj.send_http_patch_request()
+        self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
+
+    def test_05_http_delete_request(self):
+        self.response = self.reqObj.send_http_delete_request()
+        self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
