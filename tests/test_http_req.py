@@ -22,19 +22,39 @@ class TestHttpReq(unittest.TestCase):
     def test_01_http_get_request(self):
         self.response = self.reqObj.send_http_get_request()
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
+        self.assertEqual(self.response.headers['content-type'], 'application/json', 'Should be {}'.format('application/json'))
+        self.assertGreater(int(self.response.headers['content-length']), 0, 'Should be greater than {}'.format('0'))
+        self.assertEqual(self.response.as_dict['headers']['User-Agent'], 'python-requests/2.26.0', 'Should be {}'.format('python-requests/2.26.0'))
+        self.assertEqual(self.response.as_dict['url'], self.response.req.url)
 
     def test_02_http_post_request(self):
         self.response = self.reqObj.send_http_post_request()
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
+        self.assertEqual(self.response.headers['content-type'], 'application/json', 'Should be {}'.format('application/json'))
+        self.assertGreater(int(self.response.headers['content-length']), 0, 'Should be greater than {}'.format('0'))
+        self.assertEqual(self.response.as_dict['headers']['User-Agent'], 'python-requests/2.26.0', 'Should be {}'.format('python-requests/2.26.0'))
+        self.assertEqual(self.response.as_dict['url'], self.response.req.url)
 
     def test_03_http_put_request(self):
         self.response = self.reqObj.send_http_put_request()
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
+        self.assertEqual(self.response.headers['content-type'], 'application/json', 'Should be {}'.format('application/json'))
+        self.assertGreater(int(self.response.headers['content-length']), 0, 'Should be greater than {}'.format('0'))
+        self.assertEqual(self.response.as_dict['headers']['User-Agent'], 'python-requests/2.26.0', 'Should be {}'.format('python-requests/2.26.0'))
+        self.assertEqual(self.response.as_dict['url'], self.response.req.url)
 
     def test_04_http_patch_request(self):
         self.response = self.reqObj.send_http_patch_request()
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
+        self.assertEqual(self.response.headers['content-type'], 'application/json', 'Should be {}'.format('application/json'))
+        self.assertGreater(int(self.response.headers['content-length']), 0, 'Should be greater than {}'.format('0'))
+        self.assertEqual(self.response.as_dict['headers']['User-Agent'], 'python-requests/2.26.0', 'Should be {}'.format('python-requests/2.26.0'))
+        self.assertEqual(self.response.as_dict['url'], self.response.req.url)
 
     def test_05_http_delete_request(self):
         self.response = self.reqObj.send_http_delete_request()
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
+        self.assertEqual(self.response.headers['content-type'], 'application/json', 'Should be {}'.format('application/json'))
+        self.assertGreater(int(self.response.headers['content-length']), 0, 'Should be greater than {}'.format('0'))
+        self.assertEqual(self.response.as_dict['headers']['User-Agent'], 'python-requests/2.26.0', 'Should be {}'.format('python-requests/2.26.0'))
+        self.assertEqual(self.response.as_dict['url'], self.response.req.url)
