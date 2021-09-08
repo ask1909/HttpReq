@@ -20,7 +20,7 @@ class TestHttpReq(unittest.TestCase):
         del self.response
 
     def test_01_http_get_request(self):
-        self.response = self.reqObj.send_http_get_request()
+        self.response = self.reqObj.send_http_request(self.reqObj.test_data['GET'])
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
         self.assertEqual(self.response.headers['content-type'], 'application/json', 'Should be {}'.format('application/json'))
         self.assertGreater(int(self.response.headers['content-length']), 0, 'Should be greater than {}'.format('0'))
@@ -28,7 +28,7 @@ class TestHttpReq(unittest.TestCase):
         self.assertEqual(self.response.as_dict['url'], self.response.req.url)
 
     def test_02_http_post_request(self):
-        self.response = self.reqObj.send_http_post_request()
+        self.response = self.reqObj.send_http_request(self.reqObj.test_data['POST'])
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
         self.assertEqual(self.response.headers['content-type'], 'application/json', 'Should be {}'.format('application/json'))
         self.assertGreater(int(self.response.headers['content-length']), 0, 'Should be greater than {}'.format('0'))
@@ -36,7 +36,7 @@ class TestHttpReq(unittest.TestCase):
         self.assertEqual(self.response.as_dict['url'], self.response.req.url)
 
     def test_03_http_put_request(self):
-        self.response = self.reqObj.send_http_put_request()
+        self.response = self.reqObj.send_http_request(self.reqObj.test_data['PUT'])
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
         self.assertEqual(self.response.headers['content-type'], 'application/json', 'Should be {}'.format('application/json'))
         self.assertGreater(int(self.response.headers['content-length']), 0, 'Should be greater than {}'.format('0'))
@@ -44,7 +44,7 @@ class TestHttpReq(unittest.TestCase):
         self.assertEqual(self.response.as_dict['url'], self.response.req.url)
 
     def test_04_http_patch_request(self):
-        self.response = self.reqObj.send_http_patch_request()
+        self.response = self.reqObj.send_http_request(self.reqObj.test_data['PATCH'])
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
         self.assertEqual(self.response.headers['content-type'], 'application/json', 'Should be {}'.format('application/json'))
         self.assertGreater(int(self.response.headers['content-length']), 0, 'Should be greater than {}'.format('0'))
@@ -52,7 +52,7 @@ class TestHttpReq(unittest.TestCase):
         self.assertEqual(self.response.as_dict['url'], self.response.req.url)
 
     def test_05_http_delete_request(self):
-        self.response = self.reqObj.send_http_delete_request()
+        self.response = self.reqObj.send_http_request(self.reqObj.test_data['DELETE'])
         self.assertEqual(self.response.status_code, StatusCode.SUCCESS, 'Should be {}'.format(StatusCode.SUCCESS))
         self.assertEqual(self.response.headers['content-type'], 'application/json', 'Should be {}'.format('application/json'))
         self.assertGreater(int(self.response.headers['content-length']), 0, 'Should be greater than {}'.format('0'))
