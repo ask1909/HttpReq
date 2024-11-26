@@ -20,6 +20,6 @@ class TestHttpReq(unittest.TestCase):
         del self.response
 
     def test_001_http_get_request(self):
-        print("This is a test file created for testing)
+        print("This is a test file created for testing")
 
 
