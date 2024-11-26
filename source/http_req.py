@@ -22,7 +22,7 @@ class HttpReq:
     def __init__(self):
         self.base_url = 'http://httpbin.org/'
         self.headers = {'Accept': 'application/json'}
-        with open(r'C:\Users\Kaustubh Bhalerao\Work\Python\HttpReq\resources\test_data.json', 'r') as fp:
+        with open(r'C:\Users\kbhalerao\Work\Python\HttpReq\resources\test_data.json', 'r') as fp:
             self.test_data = json.load(fp)
 
     def process_response(self, response):
